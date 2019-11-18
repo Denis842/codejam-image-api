@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CodeJam</title>
+    <link rel="stylesheet" href="./dist/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <button class="header--menu-main btn"><img src="./assets/menu.png" alt="Icon menu"></button>
+        <h1 class="header--title">CodeJam - Pallete</h1>
+        <button class="header--menu-other btn"><img src="./assets/other.png" alt="Icon other menu"></button>
+    </header>
+    <main>
+        <article class="main-block">
+            <div class="main-block--paint">
+                <div class="paint--instruments menu-interactive">
+                    <div class="instruments--fill btn-paint-menu">
+                        <img src="./assets/fill.png" alt="Icon fill">
+                        <p>Fill bucket</p>
+                    </div>
+                    <div class="instruments--choose btn-paint-menu">
+                        <img src="./assets/dropper.png" alt="Icon dropper">
+                        <p>Choose color</p>
+                    </div>
+                    <div class="instruments--pencil btn-paint-menu">
+                        <img src="./assets/pencil.png" alt="Icon dropper">
+                        <p>Pencil</p>
+                    </div>
+                    <hr class="instruments--hr">
+                    <div class="instruments--move btn-paint-menu">
+                        <img src="./assets/move.png" alt="Icon move">
+                        <p>Move</p>
+                    </div>
+                    <div class="instruments--transform btn-paint-menu">
+                        <img src="./assets/transform.png" alt="Icon transform">
+                        <p>Transform</p>
+                    </div>
+                </div>
+                <div class="paint--color menu-interactive">
+                    <div class="color--current btn-paint-menu change-color menu-color">
+                        <input class="prev--circle-current circle-color" type="color" id="select-color" name="select-color" value="#008000">
+                        <label for="select-color">Current color</label>
+                    </div>
+                    <div class="color--prev btn-paint-menu menu-color">
+                        <input type="submit" class="prev--circle-prev circle-color change-color" style="background-color: #ffeb3b;" value="">
+                        <p>Prev color</p>
+                    </div>
+                    <div class="color--red btn-paint-menu menu-color">
+                        <input type="submit" class="red--circle-red circle-color change-color" style="background-color: rgb(255, 0, 0)" value="">
+                        <p>Current color</p>
+                    </div>
+                    <div class="color--blue btn-paint-menu menu-color">
+                        <input type="submit" class="blue--circle-blue circle-color change-color" style="background-color: rgb(0, 0, 255)" value="">
+                        <p>Prev color</p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-block--canvas">
+                <div class="canvas--btn-block">
+                    <button class="btn-block--image btn" id="image-load">Load</button>
+                    <input class="btn-block--search" id="search" type="search" value="Minsk">
+                    <button class="btn-block--image btn" id="grayscale">B&W</button>
+                </div>
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="main-block--choose">
+                <div class="choose--title">
+                    <p>128x128</p>
+                    <p>256x256</p>
+                    <p>512x512</p>
+                </div>
+                <input id="change-canvas" type="range" value="0" min="0" max="2" step="1">
+            </div>
+            <div id="error-image" class="main-block--error-image">
+                <p class="error-image--text">NO IMAGE! Please click on the button "Load"</p>
+            </div>
+        </article>
+    </main>
+    <script src="./dist/bundle.js"></script>
+</body>
+</html>
